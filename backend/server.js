@@ -44,15 +44,23 @@ app.get("/register",(req,res)=>{
     res.render("register");
 });
 app.post("/register",(req,res)=>{
+
+    
     const newUser = new User({username: req.body.username,email: req.body.email,name:req.body.name,surname: req.body.surname});
+    
     User.register(newUser, req.body.password,function(err){
         if(err){
             console.log(err);
+            res.send("User already exists!");
         }
-        passport.authenticate("username", "password", function(){
+        else{
+            passport.authenticate("username", "password", function(){
             res.redirect("/login");
-        })
+        })}
+        
     })
+
+    
     
     /*newUser.authenticate("username", "password", function(err){
         if(err){
