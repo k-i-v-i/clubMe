@@ -9,7 +9,7 @@ const express             =  require('express'),
     passportLocalMongoose =  require("passport-local-mongoose"),
     User                  =  require("./user");
 //Connecting database
-mongoose.connect("mongodb://localhost/auth_demo");
+mongoose.connect("mongodb://localhost:27017/clubme", {useNewUrlParser: true});
 app.use(require("express-session")({
     secret:"Any normal Word",       //decode or encode session
     resave: false,          
@@ -21,7 +21,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded(
       { extended:true }
-))
+));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -44,15 +44,36 @@ app.get("/register",(req,res)=>{
     res.render("register");
 });
 app.post("/register",(req,res)=>{
-    
-    User.register(new User({email: req.body.email,name:req.body.name,surname: req.body.surname}),req.body.password,function(err,user){
+    const newUser = new User({email: req.body.email,name:req.body.name,surname: req.body.surname, password: req.body.password});
+    /*User.insertMany(newUser,function(err){
         if(err){
             console.log(err);
-            res.render("register");
         }
+    })*/
+    newUser.save(function(err){
+        if(err){
+            console.log(err);
+        }
+    });
+    //newUser.setPassword(req.body.password);
+    
+    //let saveUser = await newUser.save();
+    //console.log(saveUser);
+    /*User.register(newUser,req.body.password,function(err,user){
+        if(err){
+            console.log(err);
+            //res.render("register");
+        }
+    })*/
+
+    /*User.register(newUser,req.body.password,function(err,user){
+        if(err){
+            console.log(err);
+            //res.render("register");
+        }*/
     passport.authenticate("local")(req,res,function(){
         res.redirect("/login");
-    })    
+        
     })
 })
 app.get("/logout",(req,res)=>{
