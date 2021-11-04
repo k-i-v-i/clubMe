@@ -44,17 +44,36 @@ app.get("/register",(req,res)=>{
     res.render("register");
 });
 app.post("/register",(req,res)=>{
-    const newUser = new User({email: req.body.email,name:req.body.name,surname: req.body.surname, password: req.body.password});
+    const newUser = new User({username: req.body.username,email: req.body.email,name:req.body.name,surname: req.body.surname});
+    User.register(newUser, req.body.password,function(err){
+        if(err){
+            console.log(err);
+        }
+        passport.authenticate("username", "password", function(){
+            res.redirect("/login");
+        })
+    })
+    
+    /*newUser.authenticate("username", "password", function(err){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect("/login");
+        }
+    });*/
     /*User.insertMany(newUser,function(err){
         if(err){
             console.log(err);
         }
     })*/
-    newUser.save(function(err){
+    
+    /*newUser.save(function(err){ BU DOGRU OLAN
         if(err){
             console.log(err);
+            res.render("register");
         }
-    });
+    });*/ 
     //newUser.setPassword(req.body.password);
     
     //let saveUser = await newUser.save();
@@ -71,10 +90,12 @@ app.post("/register",(req,res)=>{
             console.log(err);
             //res.render("register");
         }*/
-    passport.authenticate("local")(req,res,function(){
+    
+    
+    /*passport.authenticate("local")(req,res,function(){
         res.redirect("/login");
         
-    })
+    });*/
 })
 app.get("/logout",(req,res)=>{
     req.logout();
