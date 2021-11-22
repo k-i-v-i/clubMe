@@ -1,6 +1,15 @@
-<h1> Welcome to ClubMe! </h1>
-<p><ul>
-  <li><a href="/login">Login</a></li>
-  <li><a href="/register">Register</a></li>
-  <li><a href="/logout">Logout</a></li>
-</ul></p>
+<Router>
+  <Switch>
+   <div>
+     {isLoggedIn() && (
+       <>
+         <Header /> <Sidebar />
+       </>
+     )}
+     <Route path="/register" component={Register} />
+     <Route path="/login" component={Login} />
+     <Route path="/dashboard" component={Dashboard} />
+     {isLoggedIn() && <Footer />}
+   </div>
+ </Switch>
+</Router>

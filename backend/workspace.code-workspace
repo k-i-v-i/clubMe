@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "club-me",
+			"path": "../../../../club-me"
+		},
+		{
+			"name": "backend",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
