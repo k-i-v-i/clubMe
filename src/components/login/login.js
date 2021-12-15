@@ -20,7 +20,8 @@ class Login extends Component {
       alert: null
     };
   }
-  componentDidMount() {
+  /*componentDidMount() {
+    
     if (localStorage.getItem("TOKEN_KEY") != null) {
       return this.props.history.push('/dashboard');
     }
@@ -33,9 +34,10 @@ class Login extends Component {
       }
      
     }
-  }
+  }*/
 
   submitForm = (values, history) => {
+    
     axios
       .post("http://localhost:3001/login", values)
       .then(res => {
@@ -156,10 +158,11 @@ class Login extends Component {
                 onSubmit={(values, { setSubmitting }) => {
                   this.submitForm(values, this.props.history);
                   setSubmitting(false);
+                  console.log(values);
                 }}
                 validationSchema={LoginSchema}
               >
-                {/* {this.showForm()}            */}
+                {/* {this.props.showForm()}            */}
                 {props => this.showForm(props)}
               </Formik>
               <p class="mb-1">

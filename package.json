@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
     "formik": "^2.2.9",
+    "history": "^5.1.0",
+    "localstorage": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-native": "^0.66.4",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^3.4.4",
+    "react-toastify": "^8.1.0",
     "sweetalert": "^2.1.2",
     "web-vitals": "^1.1.2",
     "webpack": "^4.42.0",
@@ -43,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "create-react-component-folder": "^0.3.7"
+    "create-react-component-folder": "^0.3.7",
+    "eslint-plugin-react-hooks": "^1.7.0"
   }
 }

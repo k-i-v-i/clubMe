@@ -140,14 +140,14 @@ class Dashboard extends Component {
                 {/* Message. Default to the left */}
                 <div className="direct-chat-msg">
                   <div className="direct-chat-infos clearfix">
-                    <span className="direct-chat-name float-left">Alexander Pierce</span>
+                    <span className="direct-chat-name float-left">Deniz Incereis</span>
                     <span className="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
                   <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
-                    Is this template really for free? That's unbelievable!
+                    Message
                   </div>
                   {/* /.direct-chat-text */}
                 </div>
@@ -155,14 +155,14 @@ class Dashboard extends Component {
                 {/* Message to the right */}
                 <div className="direct-chat-msg right">
                   <div className="direct-chat-infos clearfix">
-                    <span className="direct-chat-name float-right">Sarah Bullock</span>
+                    <span className="direct-chat-name float-right">Onur Bacaksiz</span>
                     <span className="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
                   <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
-                    You better believe it!
+                    Message
                   </div>
                   {/* /.direct-chat-text */}
                 </div>
@@ -170,14 +170,14 @@ class Dashboard extends Component {
                 {/* Message. Default to the left */}
                 <div className="direct-chat-msg">
                   <div className="direct-chat-infos clearfix">
-                    <span className="direct-chat-name float-left">Alexander Pierce</span>
+                    <span className="direct-chat-name float-left">Beste Karaca</span>
                     <span className="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
                   <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
-                    Working with AdminLTE on a great new app! Wanna join?
+                    Message
                   </div>
                   {/* /.direct-chat-text */}
                 </div>
@@ -185,14 +185,14 @@ class Dashboard extends Component {
                 {/* Message to the right */}
                 <div className="direct-chat-msg right">
                   <div className="direct-chat-infos clearfix">
-                    <span className="direct-chat-name float-right">Sarah Bullock</span>
+                    <span className="direct-chat-name float-right">Deniz Incereis</span>
                     <span className="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
                   <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
-                    I would love to.
+                    Message
                   </div>
                   {/* /.direct-chat-text */}
                 </div>
@@ -207,10 +207,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user1-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          Count Dracula
-                          <small className="contacts-list-date float-right">2/28/2015</small>
+                          Beste Karaca
+                          <small className="contacts-list-date float-right">2/28/2021</small>
                         </span>
-                        <span className="contacts-list-msg">How have you been? I was...</span>
+                        <span className="contacts-list-msg">Message</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -221,10 +221,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user7-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          Sarah Doe
-                          <small className="contacts-list-date float-right">2/23/2015</small>
+                          Deniz Incereis
+                          <small className="contacts-list-date float-right">2/23/2021</small>
                         </span>
-                        <span className="contacts-list-msg">I will be waiting for...</span>
+                        <span className="contacts-list-msg">Message</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -235,10 +235,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user3-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          Nadia Jolie
-                          <small className="contacts-list-date float-right">2/20/2015</small>
+                          Onur Bacaksiz
+                          <small className="contacts-list-date float-right">2/20/2021</small>
                         </span>
-                        <span className="contacts-list-msg">I'll call you back at...</span>
+                        <span className="contacts-list-msg">Message</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -249,10 +249,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user5-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          Nora S. Vans
-                          <small className="contacts-list-date float-right">2/10/2015</small>
+                          Deniz İncereis
+                          <small className="contacts-list-date float-right">2/10/2021</small>
                         </span>
-                        <span className="contacts-list-msg">Where is your new...</span>
+                        <span className="contacts-list-msg">Message one</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -263,10 +263,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user6-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          John K.
-                          <small className="contacts-list-date float-right">1/27/2015</small>
+                          Beste Karaca
+                          <small className="contacts-list-date float-right">1/27/2021</small>
                         </span>
-                        <span className="contacts-list-msg">Can I take a look at...</span>
+                        <span className="contacts-list-msg">Hello</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -277,10 +277,10 @@ class Dashboard extends Component {
                       <img className="contacts-list-img" src="dist/img/user8-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
-                          Kenneth M.
-                          <small className="contacts-list-date float-right">1/4/2015</small>
+                          Onur Bacaksiz
+                          <small className="contacts-list-date float-right">1/4/2021</small>
                         </span>
-                        <span className="contacts-list-msg">Never mind I found...</span>
+                        <span className="contacts-list-msg">Got your message</span>
                       </div>
                       {/* /.contacts-list-info */}
                     </a>
@@ -387,7 +387,7 @@ class Dashboard extends Component {
                     <input type="checkbox" defaultValue name="todo4" id="todoCheck4" />
                     <label htmlFor="todoCheck4" />
                   </div>
-                  <span className="text">Let theme shine like a star</span>
+                  <span className="text">Message sent</span>
                   <small className="badge badge-success"><i className="far fa-clock" /> 3 days</small>
                   <div className="tools">
                     <i className="fas fa-edit" />
@@ -419,7 +419,7 @@ class Dashboard extends Component {
                     <input type="checkbox" defaultValue name="todo6" id="todoCheck6" />
                     <label htmlFor="todoCheck6" />
                   </div>
-                  <span className="text">Let theme shine like a star</span>
+                  <span className="text">Message sent</span>
                   <small className="badge badge-secondary"><i className="far fa-clock" /> 1 month</small>
                   <div className="tools">
                     <i className="fas fa-edit" />

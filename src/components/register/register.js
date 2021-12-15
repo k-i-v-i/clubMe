@@ -3,6 +3,11 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import swal from "sweetalert";
+//import { createhistory } from 'history';
+//var history = require('history').history;
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+
 const SignupSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, "username is Too Short!")
@@ -15,6 +20,26 @@ const SignupSchema = Yup.object().shape({
   
 });
 
+/*function SignupForm() {
+  let navigate = useNavigate();
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    navigate("/login", { replace: true });
+  }
+
+  return <form onSubmit={handleSubmit}>{ ... }</form>;
+}*/
+
+/*function navigationfunc() {
+  let navigate = useNavigate();
+
+  async function handleSubmitswal(){
+    navigate("/login");
+  }
+  return (handleSubmitswal());
+}*/
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -24,16 +49,29 @@ class Register extends Component {
     };
   }
 
-  submitForm = (values, history) => {
+   /*navigationfunc() {
+    let navigate = useNavigate();
+  
+    async function handleSubmitswal(){
+      navigate("/login");
+    }
+    return (handleSubmitswal());
+  }*/
+
+submitForm(values) {
+    let navigate = useNavigate();
+    const nav = () =>{
+      navigate("/login");
+    }
     axios
       .post("http://localhost:3001/register", values)
       .then(res => {
         console.log(res.data.result);
         if (res.data.result === "success") {
           swal("Success!", res.data.message, "warning").then(value => {
-            history.push("/login");
+            nav();
           });
-        } else if (res.data.result === "failure") {
+        } else if (res.data.result === "error") {
           swal("Error!", res.data.message, "error");
         }
       })
@@ -51,6 +89,10 @@ class Register extends Component {
     setFieldValue,
     isSubmitting
   }) => {
+    let navigate = useNavigate();
+    const nav = () =>{
+      navigate("/login");
+    }
     return (
       <form onSubmit={handleSubmit}>
         <div className="form-group has-feedback">
@@ -107,7 +149,7 @@ class Register extends Component {
                 : "form-control"
             }
           />
-          {errors.fullname && touched.fullname ? (
+          {errors.username && touched.username ? (
             <small id="passwordHelp" class="text-danger">
               {errors.username}
             </small>
@@ -166,7 +208,7 @@ class Register extends Component {
             <button
               type="button"
               onClick={() => {
-                this.props.history.push("/login");
+                nav();
               }}
               className="btn btn-default btn-block btn-flat"
             >
@@ -194,7 +236,7 @@ class Register extends Component {
 
               <Formik
                 initialValues={{
-                  fullname: "",
+                  username: "",
                   email: "",
                   password: "",
                   name: "",
@@ -202,7 +244,8 @@ class Register extends Component {
                   
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                  this.submitForm(values, this.props.history);
+                  console.log(values);
+                  this.submitForm(values);
                   setSubmitting(false);
                 }}
                 validationSchema={SignupSchema}
